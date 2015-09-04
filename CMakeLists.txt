@@ -12,5 +12,14 @@ configure_file (
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h
 include_directories("${PROJECT_BINARY_DIR}")
+include_directories("${PROJECT_BINARY_DIR}/MathFunctions")
+
+add_library(MathFunctions SHARED mysqrt.cxx)
 
 add_executable(Tutorial tutorial.cxx)
+
+target_link_libraries (Tutorial MathFunctions)
+
+
+install (TARGETS MathFunctions DESTINATION bin)
+install (FILES MathFunctions.h DESTINATION include)
