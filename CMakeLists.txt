@@ -20,6 +20,6 @@ add_executable(Tutorial tutorial.cxx)
 
 target_link_libraries (Tutorial MathFunctions)
 
-
-install (TARGETS MathFunctions DESTINATION bin)
+install (TARGETS Tutorial DESTINATION bin)
+install (TARGETS MathFunctions DESTINATION lib)
 install (FILES MathFunctions.h DESTINATION include)
